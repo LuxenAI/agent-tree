@@ -1,0 +1,328 @@
+{
+  "version": 8,
+  "swarm": {
+    "objective": "",
+    "provider": "codex",
+    "treeReady": false,
+    "status": "idle",
+    "phase": "idle",
+    "lastError": "",
+    "updatedAt": "2026-03-15T16:45:00.000Z"
+  },
+  "agents": [
+    {
+      "id": "master",
+      "name": "Master Agent",
+      "role": "Research Conductor",
+      "tier": "master",
+      "lane": "master",
+      "sessionActive": false,
+      "status": "queued",
+      "parentId": null,
+      "summary": "Directs the run, merges outputs, and keeps blockers visible.",
+      "current": "Merging lead outputs into one answer path and checking whether any blocked claim still needs another pass.",
+      "next": "Decide whether to reopen evidence or move directly into the final merge.",
+      "updatedAt": "2026-03-15T16:53:00.000Z",
+      "cardNote": "Merging lead outputs.",
+      "recent": [
+        "Re-ranked lane priority after synthesis exposed a support gap.",
+        "Requested a freshness re-check on the benchmark branch."
+      ],
+      "completed": [
+        "Split the run into four lanes.",
+        "Assigned the initial lead-agent tree."
+      ]
+    },
+    {
+      "id": "planner",
+      "name": "Planning Lead",
+      "role": "Task Architect",
+      "tier": "lead",
+      "lane": "planning",
+      "sessionActive": false,
+      "status": "live",
+      "parentId": "master",
+      "summary": "Keeps scope narrow and dependencies explicit.",
+      "current": "Cleaning up branch boundaries so evidence and synthesis are not repeating the same work.",
+      "next": "Close the last dependency edge once benchmark normalization lands.",
+      "updatedAt": "2026-03-15T16:51:00.000Z",
+      "cardNote": "Cleaning up dependencies.",
+      "recent": [
+        "Collapsed two overlapping retrieval tasks.",
+        "Marked synthesis as blocked on one normalized benchmark output."
+      ],
+      "completed": [
+        "Mapped the first task tree.",
+        "Defined stop conditions for all lead lanes."
+      ]
+    },
+    {
+      "id": "evidence-lead",
+      "name": "Evidence Lead",
+      "role": "Retrieval Director",
+      "tier": "lead",
+      "lane": "evidence",
+      "sessionActive": false,
+      "status": "live",
+      "parentId": "master",
+      "summary": "Owns source gathering and claim quality.",
+      "current": "Reviewing the latest source packets and deciding which claims are strong enough to ship downstream.",
+      "next": "Release one final normalized benchmark packet if freshness checks pass.",
+      "updatedAt": "2026-03-15T16:52:00.000Z",
+      "cardNote": "Reviewing source packets.",
+      "recent": [
+        "Merged the paper scout packet with benchmark updates.",
+        "Dropped two weak claims that did not change the answer."
+      ],
+      "completed": [
+        "Built the retrieval priority stack.",
+        "Published the first evidence packet."
+      ]
+    },
+    {
+      "id": "synthesis-lead",
+      "name": "Synthesis Lead",
+      "role": "Narrative Director",
+      "tier": "lead",
+      "lane": "synthesis",
+      "sessionActive": false,
+      "status": "review",
+      "parentId": "master",
+      "summary": "Shapes the final answer and keeps it aligned with the evidence.",
+      "current": "Reworking the outline around the newest packet while holding two unsupported sections in review.",
+      "next": "Unlock the final draft pass once citation support clears the open sections.",
+      "updatedAt": "2026-03-15T16:50:00.000Z",
+      "cardNote": "Reworking the outline.",
+      "recent": [
+        "Condensed the outline from five sections to three blocks.",
+        "Moved one weak conclusion back into a caveat section."
+      ],
+      "completed": [
+        "Built the first answer spine.",
+        "Sequenced the major claim blocks."
+      ]
+    },
+    {
+      "id": "audit-lead",
+      "name": "Audit Lead",
+      "role": "Adversarial Reviewer",
+      "tier": "lead",
+      "lane": "audit",
+      "sessionActive": false,
+      "status": "queued",
+      "parentId": "master",
+      "summary": "Keeps contradictions from slipping through the final merge.",
+      "current": "Waiting on the refreshed benchmark packet before deciding whether the last blocked conclusion can clear.",
+      "next": "Run one final contradiction pass across the merged answer.",
+      "updatedAt": "2026-03-15T16:48:00.000Z",
+      "cardNote": "Waiting on refreshed evidence.",
+      "recent": [
+        "Blocked one stale benchmark conclusion.",
+        "Requested a unit check on the latest metric row."
+      ],
+      "completed": [
+        "Compared the lead-lane conclusions.",
+        "Escalated the only remaining high-impact conflict."
+      ]
+    },
+    {
+      "id": "hypothesis",
+      "name": "Hypothesis Agent",
+      "role": "Question Framer",
+      "tier": "worker",
+      "lane": "planning",
+      "sessionActive": false,
+      "status": "live",
+      "parentId": "planner",
+      "summary": "Refines the question so downstream branches stay specific.",
+      "current": "Pruning the last edge cases that are no longer changing branch priorities.",
+      "next": "Freeze the hypothesis set once planning confirms no new branches are needed.",
+      "updatedAt": "2026-03-15T16:49:00.000Z",
+      "cardNote": "Pruning edge cases.",
+      "recent": [
+        "Merged duplicate hypotheses into one axis.",
+        "Dropped one branch that was too broad to answer cleanly."
+      ],
+      "completed": [
+        "Defined the initial hypothesis set.",
+        "Set the comparison axes for the run."
+      ]
+    },
+    {
+      "id": "router",
+      "name": "Routing Agent",
+      "role": "Dependency Mapper",
+      "tier": "worker",
+      "lane": "planning",
+      "sessionActive": false,
+      "status": "live",
+      "parentId": "planner",
+      "summary": "Tracks which branches can move and which are still blocked.",
+      "current": "Watching the synthesis and audit blockers so only real scheduling changes reach the master agent.",
+      "next": "Clear the last blocked edge when the benchmark scout publishes.",
+      "updatedAt": "2026-03-15T16:52:00.000Z",
+      "cardNote": "Watching blockers.",
+      "recent": [
+        "Marked synthesis as waiting on one evidence output.",
+        "Closed two completed branch edges."
+      ],
+      "completed": [
+        "Built the first branch schedule.",
+        "Published the routing board to the master agent."
+      ]
+    },
+    {
+      "id": "paper-scout",
+      "name": "Paper Scout",
+      "role": "Source Extractor",
+      "tier": "worker",
+      "lane": "evidence",
+      "sessionActive": false,
+      "status": "live",
+      "parentId": "evidence-lead",
+      "summary": "Turns source material into short claim packets.",
+      "current": "Compressing the last batch of source notes into claim summaries with provenance attached.",
+      "next": "Ship a final source packet if the remaining claims stay relevant.",
+      "updatedAt": "2026-03-15T16:51:00.000Z",
+      "cardNote": "Compressing source notes.",
+      "recent": [
+        "Pulled four usable claims from the latest paper sweep.",
+        "Tagged the remaining claims with freshness metadata."
+      ],
+      "completed": [
+        "Finished the initial paper pass.",
+        "Published one source packet to citation support."
+      ]
+    },
+    {
+      "id": "benchmark-scout",
+      "name": "Benchmark Scout",
+      "role": "Signal Miner",
+      "tier": "worker",
+      "lane": "evidence",
+      "sessionActive": false,
+      "status": "queued",
+      "parentId": "evidence-lead",
+      "summary": "Normalizes metrics so the run compares the right numbers.",
+      "current": "Waiting for one measurement clarification before finalizing the refreshed benchmark packet.",
+      "next": "Publish the normalized benchmark row back to evidence and audit.",
+      "updatedAt": "2026-03-15T16:47:00.000Z",
+      "cardNote": "Holding for clarification.",
+      "recent": [
+        "Flagged a unit mismatch in the latest benchmark row.",
+        "Prepared a replacement metric packet for review."
+      ],
+      "completed": [
+        "Built the first benchmark grid.",
+        "Normalized the main metric columns."
+      ]
+    },
+    {
+      "id": "writer",
+      "name": "Narrative Agent",
+      "role": "Outline Builder",
+      "tier": "worker",
+      "lane": "synthesis",
+      "sessionActive": false,
+      "status": "review",
+      "parentId": "synthesis-lead",
+      "summary": "Keeps the output readable while evidence is still moving.",
+      "current": "Adjusting section order so the answer opens with the strongest supported conclusion.",
+      "next": "Freeze section order once the final citation pass clears the blocked claims.",
+      "updatedAt": "2026-03-15T16:50:00.000Z",
+      "cardNote": "Adjusting section order.",
+      "recent": [
+        "Collapsed the intro and summary into one opening.",
+        "Moved one weak section into a caveat callout."
+      ],
+      "completed": [
+        "Built the first outline draft.",
+        "Created the section map for the answer."
+      ]
+    },
+    {
+      "id": "citation",
+      "name": "Citation Agent",
+      "role": "Support Matcher",
+      "tier": "worker",
+      "lane": "synthesis",
+      "sessionActive": false,
+      "status": "live",
+      "parentId": "synthesis-lead",
+      "summary": "Matches each answer block to the evidence that supports it.",
+      "current": "Closing the last two support gaps so synthesis can release the final draft pass.",
+      "next": "Confirm the replacement benchmark packet and clear the remaining blocker.",
+      "updatedAt": "2026-03-15T16:52:00.000Z",
+      "cardNote": "Closing support gaps.",
+      "recent": [
+        "Resolved three citation links on the main outline.",
+        "Marked two sections as blocked on refreshed evidence."
+      ],
+      "completed": [
+        "Mapped the first support grid.",
+        "Linked every stable section to evidence owners."
+      ]
+    },
+    {
+      "id": "contradiction",
+      "name": "Contradiction Agent",
+      "role": "Disagreement Hunter",
+      "tier": "worker",
+      "lane": "audit",
+      "sessionActive": false,
+      "status": "live",
+      "parentId": "audit-lead",
+      "summary": "Keeps disagreements visible until the tree resolves them.",
+      "current": "Re-checking the benchmark conflict against the newest evidence packet before audit clears it.",
+      "next": "Either clear the conflict or keep the final conclusion blocked.",
+      "updatedAt": "2026-03-15T16:51:00.000Z",
+      "cardNote": "Re-checking the conflict.",
+      "recent": [
+        "Matched the stale metric against the replacement packet.",
+        "Kept one disagreement open because the unit check is still pending."
+      ],
+      "completed": [
+        "Opened the contradiction queue.",
+        "Blocked the weakest high-impact claim."
+      ]
+    }
+  ],
+  "contextEntries": [
+    {
+      "id": "ctx-001",
+      "agentId": "master",
+      "kind": "decision",
+      "summary": "Hold the final merge until the benchmark freshness issue is rechecked.",
+      "symbols": ["claim_gate", "merge_queue"],
+      "references": [],
+      "createdAt": "2026-03-15T16:49:00.000Z"
+    },
+    {
+      "id": "ctx-002",
+      "agentId": "evidence-lead",
+      "kind": "finding",
+      "summary": "One benchmark row is stale; do not promote it without a fresh source packet.",
+      "symbols": ["benchmark_row", "freshness_check"],
+      "references": ["ctx-001"],
+      "createdAt": "2026-03-15T16:50:00.000Z"
+    },
+    {
+      "id": "ctx-003",
+      "agentId": "synthesis-lead",
+      "kind": "work",
+      "summary": "Outline sections two and three stay blocked until citation support clears the stale benchmark claim.",
+      "symbols": ["outline_spine", "support_gate"],
+      "references": ["ctx-002"],
+      "createdAt": "2026-03-15T16:51:00.000Z"
+    },
+    {
+      "id": "ctx-004",
+      "agentId": "audit-lead",
+      "kind": "blocker",
+      "summary": "Audit lane will not clear the final conclusion until the replacement benchmark packet lands.",
+      "symbols": ["audit_gate", "benchmark_block"],
+      "references": ["ctx-002", "ctx-003"],
+      "createdAt": "2026-03-15T16:52:00.000Z"
+    }
+  ]
+}
