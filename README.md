@@ -4,6 +4,10 @@ Minimal Electron desktop console for visualizing a master/subagent research tree
 
 The app opens into an empty workspace, lets you add a master agent manually, and then lets the master create subagents automatically or lets you add them yourself. Active sessions write compact shared context into a persistent store so downstream agents can reuse findings without pulling full codebase state into every chat.
 
+## Screenshot
+
+![Agent Tree Viewer](./assets/app.png)
+
 ## What ships in the npm package
 
 - Electron main process and preload bridge
