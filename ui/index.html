@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Agent Tree</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-glow"></div>
+    <div class="page-grid"></div>
+
+    <div class="app-shell">
+      <main class="workspace">
+        <section class="canvas panel animate">
+          <div class="section-head">
+            <div class="title-block">
+              <p class="eyebrow">Agents</p>
+              <h1>Agent Tree</h1>
+            </div>
+
+            <div class="toolbar" id="lane-filters" aria-label="Lane filters">
+              <button class="filter-chip is-active" data-filter="all">
+                All
+              </button>
+              <button class="filter-chip" data-filter="planning">
+                Planning
+              </button>
+              <button class="filter-chip" data-filter="evidence">
+                Evidence
+              </button>
+              <button class="filter-chip" data-filter="synthesis">
+                Synthesis
+              </button>
+              <button class="filter-chip" data-filter="audit">Audit</button>
+            </div>
+          </div>
+
+          <div class="tree-wrap" id="tree-wrap">
+            <svg class="tree-links" id="tree-links" aria-hidden="true"></svg>
+            <div class="tree-empty" id="tree-empty"></div>
+
+            <div class="tree-tier" data-tier="master">
+              <div class="tier-heading">
+                <span class="tier-index">Tier 0</span>
+                <span class="tier-name">Master</span>
+              </div>
+              <div class="tier-body" id="tier-master"></div>
+            </div>
+
+            <div class="tree-tier" data-tier="lead">
+              <div class="tier-heading">
+                <span class="tier-index">Tier 1</span>
+                <span class="tier-name">Lead Agents</span>
+              </div>
+              <div class="tier-body" id="tier-lead"></div>
+            </div>
+
+            <div class="tree-tier" data-tier="worker">
+              <div class="tier-heading">
+                <span class="tier-index">Tier 2</span>
+                <span class="tier-name">Specialist Agents</span>
+              </div>
+              <div class="tier-body" id="tier-worker"></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="inspector panel animate">
+          <div class="section-head">
+            <div class="title-block">
+              <p class="eyebrow">Selected Agent</p>
+              <h2>Live Session</h2>
+            </div>
+          </div>
+          <div id="agent-detail"></div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "agent-tree",
+  "version": "0.1.0",
+  "description": "Minimal Electron desktop console for orchestrating master and subagent research sessions.",
+  "productName": "Agent Tree",
+  "main": "electron/main.js",
+  "bin": {
+    "agent-tree": "./bin/agent-tree.js"
+  },
+  "files": [
+    "bin",
+    "electron",
+    "shared",
+    "ui",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "check": "node --check bin/agent-tree.js && node --check electron/main.js && node --check electron/preload.js && node --check electron/context-store.js && node --check electron/swarm-runtime.js && node --check ui/app.js",
+    "pack:check": "npm pack --dry-run",
+    "prepack": "npm run check"
+  },
+  "dependencies": {
+    "electron": "^35.0.0",
+    "@fontsource/plus-jakarta-sans": "^5.2.8"
+  },
+  "keywords": [
+    "electron",
+    "desktop",
+    "agents",
+    "swarm",
+    "research",
+    "orchestration"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
