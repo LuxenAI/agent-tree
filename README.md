@@ -1,4 +1,4 @@
-# Agent Tree
+# Agent Tree Viewer
 
 Minimal Electron desktop console for visualizing a master/subagent research tree.
 
@@ -16,7 +16,7 @@ Python training files, local experiment outputs, notebooks, and test artifacts a
 ## Install
 
 ```bash
-npm install agent-tree
+npm install agent-tree-viewer
 ```
 
 ## Run
@@ -24,7 +24,7 @@ npm install agent-tree
 Use the packaged launcher:
 
 ```bash
-npx agent-tree
+npx agent-tree-viewer
 ```
 
 Or if you are developing inside the repo:
