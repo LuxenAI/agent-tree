@@ -103,6 +103,14 @@ body {
   color: var(--ink-dim);
 }
 
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  max-width: 32rem;
+  line-height: 1.45;
+}
+
 h1,
 h2,
 h3 {
