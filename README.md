@@ -1,37 +1,29 @@
-# Agent Tree Viewer
+# Agent Tree
 
-Minimal Electron desktop console for visualizing a master/subagent research tree.
+Agent Tree is a Luxen desktop workspace for running master and subagent sessions with shared context, live status, and one place to inspect the tree as work branches out.
 
-The app opens into an empty workspace, lets you add a master agent manually, and then lets the master create subagents automatically or lets you add them yourself. Active sessions write compact shared context into a persistent store so downstream agents can reuse findings without pulling full codebase state into every chat.
+It is built for multi-agent coding and research workflows where context needs to stay compact and reusable instead of being recopied into every chat.
 
-## App Image
+![Agent Tree screenshot](./assets/app.png)
 
-![Agent Tree Viewer](./assets/app.png)
+![Agent Tree architecture](./docs/architecture.svg)
 
-## What ships in the npm package
+## What it does
 
-- Electron main process and preload bridge
-- Minimal tree UI and terminal-style session inspector
-- File-backed shared context store
-- Codex and Claude runtime switching
+- Renders the live master, lead, and worker tree
+- Persists shared context entries that downstream agents can reference
+- Switches between Codex and Claude at runtime
+- Shows per-agent lane, status, and recent updates in one desktop view
+- Keeps the control surface local with no hosted backend
 
-Python training files, local experiment outputs, notebooks, and test artifacts are intentionally excluded from the published package.
+## How it works
 
-## Install
+- `electron/` owns runtime integration, filesystem access, and the shared context store
+- `ui/` renders the tree, lane filters, and selected session inspector
+- `shared/default-state.json` provides a clean development state for local runs
+- `bin/agent-tree.js` launches the packaged app
 
-```bash
-npm install agent-tree-viewer
-```
-
-## Run
-
-Use the packaged launcher:
-
-```bash
-npx agent-tree-viewer
-```
-
-Or if you are developing inside the repo:
+## Run from source
 
 ```bash
 npm install
@@ -47,21 +39,14 @@ npm run pack:check
 
 ## Runtime notes
 
-- The desktop app stores state in Electron's user-data directory.
-- `codex` and `claude` are detected from your `PATH`.
-- Only active agents render in the tree.
-- Shared context entries are intentionally compact: findings, symbols, references, and outcomes.
+- The desktop app stores state in Electron's user-data directory
+- `codex` and `claude` are detected from your `PATH`
+- Only active agents render in the tree
+- Shared context entries stay intentionally compact and focus on findings, symbols, references, and outcomes
 
-## Package contents
+## Authorship
 
-The npm tarball is whitelisted to:
-
-- `bin/`
-- `electron/`
-- `shared/`
-- `ui/`
-- `README.md`
-- `LICENSE`
+Agent Tree is a Luxen project. This public repo reflects implementation work by Ganesh Talluri and Ishaan Ranjan.
 
 ## License
 

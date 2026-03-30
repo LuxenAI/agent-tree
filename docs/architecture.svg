@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" fill="none">
+  <rect width="980" height="420" rx="28" fill="#07090B"/>
+  <rect x="36" y="52" width="188" height="118" rx="18" fill="#0E1318" stroke="#202A35"/>
+  <text x="58" y="92" fill="#F4F7FB" font-family="Arial, sans-serif" font-size="28" font-weight="700">Desktop UI</text>
+  <text x="58" y="124" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">Tree view</text>
+  <text x="58" y="150" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">Session inspector</text>
+
+  <rect x="286" y="52" width="208" height="118" rx="18" fill="#0E1318" stroke="#202A35"/>
+  <text x="308" y="92" fill="#F4F7FB" font-family="Arial, sans-serif" font-size="28" font-weight="700">Electron Core</text>
+  <text x="308" y="124" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">Runtime bridge</text>
+  <text x="308" y="150" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">Filesystem access</text>
+
+  <rect x="556" y="52" width="188" height="118" rx="18" fill="#0E1318" stroke="#202A35"/>
+  <text x="578" y="92" fill="#F4F7FB" font-family="Arial, sans-serif" font-size="28" font-weight="700">Context Store</text>
+  <text x="578" y="124" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">Findings</text>
+  <text x="578" y="150" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">References and outcomes</text>
+
+  <rect x="782" y="52" width="162" height="118" rx="18" fill="#0E1318" stroke="#202A35"/>
+  <text x="804" y="92" fill="#F4F7FB" font-family="Arial, sans-serif" font-size="28" font-weight="700">Runtimes</text>
+  <text x="804" y="124" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">Codex</text>
+  <text x="804" y="150" fill="#95A0B3" font-family="Arial, sans-serif" font-size="18">Claude</text>
+
+  <rect x="180" y="256" width="280" height="108" rx="18" fill="#0B1115" stroke="#1D2A33"/>
+  <text x="208" y="296" fill="#7DFFAF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Live agent tree</text>
+  <text x="208" y="326" fill="#D6DEE7" font-family="Arial, sans-serif" font-size="18">Master, lead, and worker sessions</text>
+
+  <rect x="518" y="256" width="280" height="108" rx="18" fill="#0B1115" stroke="#1D2A33"/>
+  <text x="546" y="296" fill="#7DFFAF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Reusable context</text>
+  <text x="546" y="326" fill="#D6DEE7" font-family="Arial, sans-serif" font-size="18">Compact state passed across agents</text>
+
+  <path d="M224 111H286" stroke="#7DFFAF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M494 111H556" stroke="#7DFFAF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M744 111H782" stroke="#7DFFAF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M390 170V226" stroke="#7DFFAF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M650 170V226" stroke="#7DFFAF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M390 226H658" stroke="#7DFFAF" stroke-width="4" stroke-linecap="round"/>
+</svg>
