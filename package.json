@@ -1,9 +1,14 @@
 {
   "name": "agent-tree",
   "version": "0.1.0",
-  "description": "Minimal Electron desktop console for orchestrating master and subagent research sessions.",
+  "description": "Luxen desktop workspace for managing agent trees, shared context, and live multi-agent sessions.",
   "productName": "Agent Tree",
   "main": "electron/main.js",
+  "homepage": "https://github.com/LuxenAI/agent-tree",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuxenAI/agent-tree.git"
+  },
   "bin": {
     "agent-tree": "./bin/agent-tree.js"
   },
@@ -30,9 +35,11 @@
     "electron",
     "desktop",
     "agents",
-    "swarm",
-    "research",
-    "orchestration"
+    "multi-agent",
+    "developer-tools",
+    "shared-context",
+    "codex",
+    "claude"
   ],
   "license": "MIT",
   "engines": {
