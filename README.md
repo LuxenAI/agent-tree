@@ -26,8 +26,8 @@ It is built for multi-agent coding and research workflows where context needs to
 ## Run from source
 
 ```bash
-npm install
-npm start
+npm install agent-tree-viewer
+npx agent-tree-viewer
 ```
 
 ## Development checks
