@@ -40,7 +40,6 @@ npm run pack:check
 ## Runtime notes
 
 - The desktop app stores state in Electron's user-data directory
-- `codex` and `claude` are detected from your `PATH`
 - Only active agents render in the tree
 - Shared context entries stay intentionally compact and focus on findings, symbols, references, and outcomes
 
