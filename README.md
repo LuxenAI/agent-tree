@@ -1,6 +1,6 @@
-# Agent Tree
+# Arbor 🌳
 
-Agent Tree is a Luxen desktop workspace for running master and subagent sessions with shared context, live status, and one place to inspect the tree as work branches out.
+Arbor is a Luxen desktop workspace for running master and subagent sessions with shared context, live status, and one place to inspect the tree as work branches out.
 
 It is built for multi-agent coding and research workflows where context needs to stay compact and reusable instead of being recopied into every chat.
 
@@ -45,7 +45,7 @@ npm run pack:check
 
 ## Authorship
 
-Agent Tree is a Luxen project. This public repo reflects implementation work by Ganesh Talluri and Ishaan Ranjan.
+Arbor is a Luxen project. This public repo reflects implementation work by Ganesh Talluri and Ishaan Ranjan.
 
 ## License
 
