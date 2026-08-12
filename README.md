@@ -6,8 +6,6 @@ It is built for multi-agent coding and research workflows where context needs to
 
 ![Agent Tree screenshot](./assets/app.png)
 
-![Agent Tree architecture](./docs/architecture.svg)
-
 ## What it does
 
 - Renders the live master, lead, and worker tree
